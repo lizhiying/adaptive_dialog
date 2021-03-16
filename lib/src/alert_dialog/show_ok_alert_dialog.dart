@@ -18,6 +18,7 @@ Future<OkCancelResult> showOkAlertDialog({
   bool useRootNavigator = true,
   VerticalDirection actionsOverflowDirection = VerticalDirection.up,
   bool fullyCapitalizedForMaterial = true,
+  TextStyle actionStyle = const TextStyle(),
 }) async {
   final result = await showAlertDialog<OkCancelResult>(
     context: context,
@@ -33,6 +34,7 @@ Future<OkCancelResult> showOkAlertDialog({
       AlertDialogAction(
         label: okLabel ?? MaterialLocalizations.of(context).okButtonLabel,
         key: OkCancelResult.ok,
+        textStyle: actionStyle,
       )
     ],
   );
